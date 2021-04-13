@@ -1,10 +1,17 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Button, StatusBar, Platform } from "react-native";
+import { StyleSheet, SafeAreaView, Button, StatusBar, Platform, View } from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Button color="orange" title="Click Me" onPress={() => console.log("button pressed")} />
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "50%",
+          height: 70,
+        }}
+        //Density-Independent Pixles : Physical pixles = DIPS x scale factor
+      ></View>
     </SafeAreaView>
   );
 }
