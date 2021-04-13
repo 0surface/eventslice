@@ -1,14 +1,36 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableWithoutFeedback,
+  TouchableHighlight,
+  TouchableOpacity,
+  Image,
+  SafeAreaView,
+} from "react-native";
 
 export default function App() {
-  console.log("App executed");
+  const handlePress = () => console.log("Text is pressed");
+  const handleTouWFPress = () => console.log("Image pressed");
   return (
-    <View style={styles.container}>
-      <Text>Hello world of react native</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text numberOfLines={1} onPress={handlePress}>
+        Hello world of react native
+      </Text>
+      {/* <Image source={require("./assets/icon.png")} /> */}
+      <TouchableHighlight onPress={handleTouWFPress}>
+        {/* <Image
+          source={{
+            width: 200,
+            height: 300,
+            uri: "https://picsum.photos/200/300",
+          }}
+        /> */}
+        <View style={{ width: 200, height: 70, backgroundColor: "dodgerblue" }}></View>
+      </TouchableHighlight>
+    </SafeAreaView>
   );
 }
 
